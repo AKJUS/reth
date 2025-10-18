@@ -41,7 +41,7 @@ RUN cargo build --profile $BUILD_PROFILE --features "$FEATURES" --locked --bin r
 RUN cp /app/target/$BUILD_PROFILE/reth /app/reth
 
 # Use Ubuntu as the release image
-FROM ubuntu AS runtime
+FROM ubuntu:24.10 AS runtime
 WORKDIR /app
 
 # Copy reth over from the build stage
